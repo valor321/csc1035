@@ -27,7 +27,7 @@ public class Main {
 
         }
 
-        public static void moreExCar(String manufacturer, int money) {
+        public static void moreExCarM(String manufacturer, int money) {
             String model;
             for (carModel car : carModel.carList) {
                 if (car.manufacturer.equals(manufacturer)) {
@@ -108,6 +108,39 @@ public class Main {
             }
             System.out.println("Most expensive model is " + model);
         }
+
+        public static void revType(String type) {
+            int expensive = 0;
+            String manufacturer = "";
+            for (carModel car : carModel.carList) {
+                if (car.type.equals(type)) {
+                    if (car.price * car.sold < expensive) {
+                        expensive = car.price * car.sold;
+                        manufacturer = car.manufacturer;
+                    }
+                }
+            }
+            System.out.println("Most revenue made by a " + type + "is a " + manufacturer);
+        }
+
+        public static void moreExCar(int money) {
+            String model;
+            for (carModel car : carModel.carList) {
+                    if (car.price > money) {
+                        model = car.model;
+                        System.out.println("The model higher than the money is a " + model);
+
+
+                    } else {
+                        System.out.println("There is no such expensive model");
+                    }
+
+
+
+            }
+
+        }
+
     }
 
 
@@ -120,7 +153,9 @@ public class Main {
         carModel.allCars();
         carModel.expensiveM("bmw");
         carModel.totalRev("ford");
-        carModel.moreExCar("ford", 1200);
+        carModel.moreExCarM("ford", 1200);
         reporting.carModSold();
+        reporting.revType("saloon");
+        reporting.moreExCar(1200);
     }
 }
