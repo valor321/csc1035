@@ -179,6 +179,13 @@ public class Main {
 
     public static class reportingIO{
 
+        /**
+         * This class gets the user input and asks all the questions necessary
+         * This class has a method that asks for the manufacture
+         * This class has a method that asks for the model
+         * This class includes a method that displays the user menu and asks for what they want to do
+         */
+
         public static void getManufacturer() {
             Scanner myObj = new Scanner(System.in);
             String manufacturer;
@@ -254,14 +261,6 @@ public class Main {
                 }
             }
             while(repeat);
-
-
-            carModel.expensiveM("bmw");
-            carModel.totalRev("ford");
-            carModel.moreExCarM("ford");
-            reporting.carModSold();
-            reporting.revType("saloon");
-            reporting.moreExCar();
 
 
         }
