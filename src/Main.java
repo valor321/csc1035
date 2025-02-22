@@ -239,10 +239,10 @@ public class Main {
             boolean repeat = true;
             do {
                 switch (userNum) {
-                    case 1:
+                    case 2:
                         carModel.expensiveM(manufacturer);
                         break;
-                    case 2:
+                    case 1:
                         carModel.totalRev(manufacturer);
                         break;
                     case 3:
@@ -290,7 +290,5 @@ public class Main {
 
         reportingIO.getManufacturer();
         reportingIO.getModel();
-
-
     }
 }
