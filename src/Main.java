@@ -28,7 +28,7 @@ public class Main {
         }
 
         public static void moreExCar(String manufacturer, int money) {
-            String model = "";
+            String model;
             for (carModel car : carModel.carList) {
                 if (car.manufacturer.equals(manufacturer)) {
                     if (car.price > money) {
@@ -95,15 +95,32 @@ public class Main {
     }
 
 
+    public static class reporting{
+
+        public static void carModSold() {
+            int expensive = 0;
+            String model = "";
+            for (carModel car : carModel.carList) {
+                if (car.price > expensive) {
+                    expensive = car.price;
+                    model = car.model;
+                }
+            }
+            System.out.println("Most expensive model is " + model);
+        }
+    }
+
+
     public static void main(String[] args) {
         new carModel("coup", 12, 1200, 3200, "hatchback","bmw");
         new carModel("sedan", 17, 1100, 6050, "saloon", "bmw");
         new carModel("titanium", 17, 5600, 10000, "estate", "ford");
         new carModel("focus", 17, 1200, 56000, "hatchback", "ford");
-        new carModel("mustang", 17, 10_000, 40000, "saloon", "ford");
+        new carModel("mustang", 17, 10000, 40000, "saloon", "ford");
         carModel.allCars();
         carModel.expensiveM("bmw");
         carModel.totalRev("ford");
         carModel.moreExCar("ford", 1200);
-            }
+        reporting.carModSold();
+    }
 }
